@@ -11,10 +11,10 @@ void bubble_sort(int vetor[], int n)
 {
 	int k, j, aux;
 
-	for (k = 1; k < n; k+=1)
+	for (k = 1; k < n; k += 1)
 	{
 
-		for (j = 0; j < n - 1; j+=1)
+		for (j = 0; j < n - 1; j += 1)
 		{
 
 			if (vetor[j] > vetor[j + 1])
@@ -29,7 +29,7 @@ void bubble_sort(int vetor[], int n)
 void insertionSort(int vetor[], int n)
 {
 	int i, key, j;
-	for (i = 1; i < n; i+=1)
+	for (i = 1; i < n; i += 1)
 	{
 		key = vetor[i];
 		j = i - 1;
@@ -49,9 +49,9 @@ void merge(int vetor[], int l, int m, int r)
 
 	int L[n1], R[n2];
 
-	for (i = 0; i < n1; i+=1)
+	for (i = 0; i < n1; i += 1)
 		L[i] = vetor[l + i];
-	for (j = 0; j < n2; j+=1)
+	for (j = 0; j < n2; j += 1)
 		R[j] = vetor[m + 1 + j];
 
 	i = 0;
@@ -62,28 +62,28 @@ void merge(int vetor[], int l, int m, int r)
 		if (L[i] <= R[j])
 		{
 			vetor[k] = L[i];
-			i+=1;
+			i += 1;
 		}
 		else
 		{
 			vetor[k] = R[j];
-			j+=1;
+			j += 1;
 		}
-		k+=1;
+		k += 1;
 	}
 
 	while (i < n1)
 	{
 		vetor[k] = L[i];
-		i+=1;
-		k+=1;
+		i += 1;
+		k += 1;
 	}
 
 	while (j < n2)
 	{
 		vetor[k] = R[j];
-		j+=1;
-		k+=1;
+		j += 1;
+		k += 1;
 	}
 }
 void mergeSort(int vetor[], int l, int r)
@@ -136,40 +136,39 @@ void heapSort(int vetor[], int n)
 }
 int binarySearch(int vetor[], int l, int r, int x)
 {
-    if (r >= l) {
-        int meio = l + (r - l) / 2;
+	if (r >= l)
+	{
+		int meio = l + (r - l) / 2;
 
-        if (vetor[meio] == x)
-            return meio;
- 
-               
-        if (vetor[meio] > x)
-            return binarySearch(vetor, l, meio - 1, x);
- 
-        
-        return binarySearch(vetor, meio + 1, r, x);
-    }
+		if (vetor[meio] == x)
+			return meio;
 
-    return -1;
+		if (vetor[meio] > x)
+			return binarySearch(vetor, l, meio - 1, x);
+
+		return binarySearch(vetor, meio + 1, r, x);
+	}
+
+	return -1;
 }
 int buscaSequencial(int vet[], int n, int chave)
 {
-	for(int i = 0; i < n; i += 1)
+	for (int i = 0; i < n; i += 1)
 	{
-		if(vet[i] == chave)
+		if (vet[i] == chave)
 			return i;
 	}
 	return -1;
 }
 int main()
 {
-	FILE *f, *f2,*f3;
+	FILE *f, *f2, *f3;
 	f = fopen("bubbleSort.txt", "w+");
 	for (int n = 0; n < N; n += 1)
 	{
 		int v[n];
 		struct timeval startTime, endTime;
-		unsigned long  usecDiff, msecDiff, time_diff;
+		unsigned long usecDiff, msecDiff, time_diff;
 		srandom(time(NULL));
 		for (int i = 0; i < n; i += 1)
 		{
@@ -182,7 +181,7 @@ int main()
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
@@ -195,7 +194,7 @@ int main()
 	{
 		int v[n];
 		struct timeval startTime, endTime;
-		unsigned long  usecDiff, msecDiff, time_diff;
+		unsigned long usecDiff, msecDiff, time_diff;
 		srandom(time(NULL));
 		for (int i = 0; i < n; i += 1)
 		{
@@ -208,7 +207,7 @@ int main()
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
@@ -218,12 +217,12 @@ int main()
 	fclose(f);
 	f = fopen("quickSort.txt", "w+");
 	f2 = fopen("buscaBinaria.txt", "w+");
-	f3 = fopen("buscaSequencial.txt","w+");
+	f3 = fopen("buscaSequencial.txt", "w+");
 	for (int n = 0; n < N; n += 1)
 	{
 		int v[n];
 		struct timeval startTime, endTime;
-		unsigned long  usecDiff, msecDiff, time_diff;
+		unsigned long usecDiff, msecDiff, time_diff;
 		srandom(time(NULL));
 		for (int i = 0; i < n; i += 1)
 		{
@@ -236,33 +235,33 @@ int main()
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
 		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
 		gettimeofday(&startTime, NULL);
-		binarySearch(v, 0, n-1, v[n]/3);
+		binarySearch(v, 0, n - 1, v[n] / 3);
 		gettimeofday(&endTime, NULL);
 		/* calcula a diferenca entre os tempos, em usec */
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
 		fprintf(f2, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
 		gettimeofday(&startTime, NULL);
-		buscaSequencial(v,n,v[n]/3);
+		buscaSequencial(v, n, v[n] / 3);
 		gettimeofday(&endTime, NULL);
 		/* calcula a diferenca entre os tempos, em usec */
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
@@ -277,7 +276,7 @@ int main()
 	{
 		int v[n];
 		struct timeval startTime, endTime;
-		unsigned long  usecDiff, msecDiff, time_diff;
+		unsigned long usecDiff, msecDiff, time_diff;
 		srandom(time(NULL));
 		for (int i = 0; i < n; i += 1)
 		{
@@ -290,7 +289,7 @@ int main()
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
@@ -303,7 +302,7 @@ int main()
 	{
 		int v[n];
 		struct timeval startTime, endTime;
-		unsigned long  usecDiff, msecDiff, time_diff;
+		unsigned long usecDiff, msecDiff, time_diff;
 		srandom(time(NULL));
 		for (int i = 0; i < n; i += 1)
 		{
@@ -316,7 +315,7 @@ int main()
 		time_diff = (1000000L * endTime.tv_sec + endTime.tv_usec) -
 					(1000000L * startTime.tv_sec + startTime.tv_usec);
 		/* converte para segundos + microsegundos (parte fracion�ria) */
-		
+
 		usecDiff = time_diff % 1000000L;
 
 		/* converte para msec */
@@ -324,4 +323,5 @@ int main()
 		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
+	return 0;
 }
