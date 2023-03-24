@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <sys/time.h>
-#define N 3000
+#define N 300
 int cmp(const void *a, const void *b)
 {
 	return (*(int *)a - *(int *)b);
@@ -10,7 +10,6 @@ int cmp(const void *a, const void *b)
 void bubble_sort(int vetor[], int n)
 {
 	int k, j, aux;
-
 	for (k = 1; k < n; k += 1)
 	{
 
