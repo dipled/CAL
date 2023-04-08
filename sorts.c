@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <sys/time.h>
-#define N 300
+#define N 3000
 int cmp(const void *a, const void *b)
 {
 	return (*(int *)a - *(int *)b);
@@ -185,7 +185,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
 	f = fopen("insertionSort.txt", "w+");
@@ -211,7 +211,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
 	f = fopen("quickSort.txt", "w+");
@@ -239,7 +239,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 		gettimeofday(&startTime, NULL);
 		binarySearch(v, 0, n - 1, v[n] / 3);
 		gettimeofday(&endTime, NULL);
@@ -252,7 +252,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f2, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f2, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 		gettimeofday(&startTime, NULL);
 		buscaSequencial(v, n, v[n] / 3);
 		gettimeofday(&endTime, NULL);
@@ -265,7 +265,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f3, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f3, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
 	fclose(f2);
@@ -293,7 +293,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
 	f = fopen("heapSort.txt", "w+");
@@ -319,7 +319,7 @@ int main()
 
 		/* converte para msec */
 		msecDiff = time_diff / 1000;
-		fprintf(f, "(%d,%lu.%03lu),\n", n, msecDiff, usecDiff % 1000);
+		fprintf(f, "%lu%03lu\n",msecDiff, usecDiff % 1000);
 	}
 	fclose(f);
 	return 0;
