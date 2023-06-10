@@ -19,12 +19,14 @@ public:
 class knap
 {
 public:
+
+    knap(int size, double cap)
+    {
+        items.resize(size);
+        this->cap = cap;
+    }
     vector<double> items;
     double cap;
-    void addItem(double x)
-    {
-        items.push_back(x);
-    }
 
 };
 bool compareItem(item e1, item e2)
