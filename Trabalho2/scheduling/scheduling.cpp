@@ -52,7 +52,6 @@ int main()
 {
 	// n -> nro de plataformas ; m -> nro de trens
 	int n, m;
-	vector<train> trains;
 	cout << "Digite o numero de plataformas\n";
 	cin >> n;
 	cout << "Digite o numero de trens\n";
