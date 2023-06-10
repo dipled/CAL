@@ -19,7 +19,7 @@ int knapIntTopDownRec(int j, int x)
         {
             int uses =  v[j] + knapIntTopDownRec(j-1,x-w[j]);
             int doesntUse = knapIntTopDownRec(j-1,x);
-            uses > doesntUse?m[j][x] = uses : m[j][x] = doesntUse;
+            m[j][x] = max(uses,doesntUse);
         }
     }
     return m[j][x];
@@ -31,10 +31,10 @@ int knapIntTopDown()
     for(int x = 0; x < W+1; ++x)
     {
         m[0][x] = 0;
-        for(int j = 0; j < n+1; ++j)
+        for(int j = 1; j < n+1; ++j)
         {
             m[j][x] = -1;
-            m[j][0] - 0;
+            m[j][0] = 0;
         }
     }
     return knapIntTopDownRec(n, W);
@@ -43,10 +43,10 @@ int knapIntTopDown()
 int main()
 {
     cout << knapIntTopDown();
-     for(int i = 0; i < W+1; i++)
+     for(int i = 0; i < n+1; i++)
     {
         cout<<"\n";
-        for(int j = 0; j < n+1; j++)
+        for(int j = 0; j < W+1; j++)
         {
             cout << m[i][j] << " ";
         }
