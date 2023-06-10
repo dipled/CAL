@@ -4,8 +4,8 @@ using namespace std;
 const int n = 4;
 const int W = 7;
 
-int w[n] = {2, 1, 6, 5};
-int v[n] = {10, 7, 25, 24};
+int w[n] = {1, 3, 4, 5};
+int v[n] = {10, 40, 50, 70};
 int knapIntTopDownRec(array<array<int, W + 1>, n + 1> &m, int j, int x)
 {
     if (m[j][x] == -1)
@@ -79,4 +79,5 @@ int main()
             cout << m[i][j] << " ";
         }
     }
+    return 0;
 }

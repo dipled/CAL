@@ -46,6 +46,7 @@ int contaMaxTremDisponivel(int m, int n)
 			}
 		}
 	}
+	trains.clear();
 	return ret;
 }
 int main()
