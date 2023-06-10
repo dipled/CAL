@@ -5,19 +5,19 @@ const int n = 4;
 const int W = 7;
 
 array<array<int,W+1>,n+1> m;
-int w[W] = {2,1,6,5};
-int v[W] = {10,7,25,24};
+int w[n] = {2,1,6,5};
+int v[n] = {10,7,25,24};
 int knapIntTopDownRec(int j, int x)
 {
     if(m[j][x] == -1)
     {
-        if(w[j] > x)
+        if(w[j-1] > x)
         {
             m[j][x] = knapIntTopDownRec(j-1,x);
         }
         else
         {
-            int uses =  v[j] + knapIntTopDownRec(j-1,x-w[j]);
+            int uses =  v[j-1] + knapIntTopDownRec(j-1,x-w[j-1]);
             int doesntUse = knapIntTopDownRec(j-1,x);
             m[j][x] = max(uses,doesntUse);
         }
