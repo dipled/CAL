@@ -1,5 +1,5 @@
-#ifndef knap_hpp
-#define knap_hpp
+#ifndef _knap_hpp
+#define _knap_hpp
 #include <vector>
 using namespace std;
 class item
