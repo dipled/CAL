@@ -18,7 +18,7 @@ int knapIntTopDownRec(array<array<int, W + 1>, n + 1> &m, int j, int x)
         {
             int doesntUse = knapIntTopDownRec(m, j - 1, x);
             int uses = v[j - 1] + knapIntTopDownRec(m, j - 1, x - w[j - 1]);
-            m[j][x] = max(uses, doesntUse);
+            m[j][x] = uses > doesntUse ? uses : doesntUse;
         }
     }
     return m[j][x];
@@ -45,7 +45,7 @@ int knapIntBottomUp(array<array<int, W + 1>, n + 1> &m)
             {
                 int usa = v[j-1] + m[j-1][x-w[j-1]];
                 int naoUsa = m[j-1][x];
-                m[j][x] = max(usa,naoUsa);
+                m[j][x] = usa > naoUsa ? usa : naoUsa;
             }
         }
     }
