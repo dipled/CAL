@@ -24,7 +24,7 @@ class train
 public:
 	tTime arrival;
 	tTime departure;
-
+	
 };
 bool compareTimes(train t1, train t2)
 {
