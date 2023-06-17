@@ -11,7 +11,7 @@ double naiveFib(double n)
 }
 
 
-double fibTopDownRec(int n, double *vet)
+double fibTopDownRec(int n, vector<double> &vet)
 {
 	nOp++;
 	if(vet[n-1] == 0)
@@ -25,8 +25,7 @@ double fibTopDown (int n)
 	vector<double> vet;
 	vet.resize(n);
 	vet[1] = vet[0] = 1;
-	//nesse caso precisamos passar o vet.data pois queremos o conceito de ponteiros
-	return fibTopDownRec(n,vet.data());	
+	return fibTopDownRec(n,vet);	
 }
 double fibBottomUp(int n)
 {
