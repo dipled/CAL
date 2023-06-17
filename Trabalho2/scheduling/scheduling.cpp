@@ -5,7 +5,7 @@
 using namespace std;
 int contaMaxTremDisponivel(int m, int n)
 {
-	vector<vector<train>> trains(3);
+	vector<vector<train>> trains(n);
 	// initialize the trains
 	for (int i = 0; i < m; i++) //O(m)
 	{
